@@ -1,4 +1,16 @@
 http:
+  middlewares:
+      s1:
+        headers:
+          accessControlAllowMethods:
+            - GET
+            - OPTIONS
+            - PUT
+            - POST
+          accessControlAllowOriginList:
+            - *
+          accessControlMaxAge: 100
+          addVaryHeader: true
   routers:
     r1:
       rule: "!Host(`google.com`)"
@@ -8,3 +20,5 @@ http:
       loadBalancer:
         passHostHeader: false
         servers:
+        http:
+  
