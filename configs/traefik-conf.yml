@@ -20,5 +20,4 @@ http:
       loadBalancer:
         passHostHeader: false
         servers:
-        http:
   
